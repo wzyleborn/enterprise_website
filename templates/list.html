@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content%}
+  <div class="container-wrapper">
+    <section id="about-us" class="about-us">
+      <h2 class="title1" style="padding: 10px;">新闻列表</h2>
+        {% for item in news_list %}
+          <div style="padding: 6px 0;">
+            <a class="intro" href="/news/{{ item.id }}">
+                {{ item.title }}------{{item.created_at}}
+            </a>
+          </div>
+        {% endfor %}
+    </section>
+  </div>
+{% endblock %}

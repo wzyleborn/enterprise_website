@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block content %}
+  <div class="container-wrapper">
+    <section id="about-us" class="about-us">
+      <h2 class="title1" style="padding: 10px 0;">{{news.title}}</h2>
+          <p>创建时间：{{news.created_at}}</p>
+          <div style="padding: 6px 0;">
+            <img src="{{news.cover.url}}" alt="{{news.title}}">
+          </div>
+          <div style="padding: 6px 0;">
+            <p class="intro" href="/news/{{ item.id }}">
+              {{ news.content|safe }} 
+            </a>
+          </div>
+    </section>
+  </div>
+{% endblock %}

@@ -1,0 +1,113 @@
+# === Python 编译文件 ===
+# 忽略Python字节码缓存和编译结果
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# === 本地配置文件和环境变量 ===
+# 至关重要！切勿提交包含密码、密钥的本地设置文件
+local_settings.py
+.env
+.env.local
+.env.production
+.secret_key
+
+# === 数据库文件 ===
+# 忽略本地开发使用的SQLite数据库
+*.sqlite3
+db.sqlite3
+db.sqlite3-journal
+
+# === 虚拟环境 ===
+# 忽略Python虚拟环境，依赖应由requirements.txt管理
+.venv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# === 包分发和构建产物 ===
+# 忽略打包和分发过程中产生的目录
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# === 安装日志和缓存 ===
+pip-log.txt
+pip-delete-this-directory.txt
+
+# === 单元测试与覆盖率报告 ===
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# === 日志文件 ===
+*.log
+
+# === IDE/编辑器配置 ===
+# PyCharm
+.idea/
+*.iws
+/out/
+# VSCode
+.vscode/
+# Vim
+*.swp
+*.*.swp
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+sftp-config.json
+
+# === 操作系统生成文件 ===
+# MacOS
+.DS_Store
+# Windows
+Thumbs.db
+ehthumbs.vsdb
+Desktop.ini
+
+# === Django 项目相关 ===
+# 用户上传的媒体文件
+media/
+# 静态文件收集目录（如果非必需）
+staticfiles/
+
+# === 其他工具 ===
+.coverage
+celerybeat-schedule.*
+*.sage.py
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.spyderproject
+.spyproject
+.ropeproject

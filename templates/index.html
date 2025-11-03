@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% block content %}
+  <!-- 轮播图 -->
+  <div id="home" class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <div class="glide__slides">
+        {% for slide in slides %}
+        <div class="glide__slide">
+          <div class="slide-caption">
+            <h1>{{slide.title}}</h1>
+            <h3>
+                {{slide.content}}
+            </h3>
+            <button class="explore-btn">探索更多</button>
+          </div>
+          <!-- 遮罩层 -->
+          <div class="backdrop"></div>
+          <img src="media/{{slide.image}}" alt="">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- 切换按钮 -->
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+        < </button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+            >
+          </button>
+    </div>
+    <!-- 控制圆点 -->
+    <div class="glide__bullets" data-glide-el="controls[nav]">
+      <button class="glide__bullet" data-glide-dir="=0"></button>
+      <button class="glide__bullet" data-glide-dir="=1"></button>
+      <button class="glide__bullet" data-glide-dir="=2"></button>
+    </div>
+  </div>
+
+  <!-- 关于我们 -->
+  <div class="container-wrapper">
+    <section id="about-us" class="about-us">
+      <h2 class="title1">关于我们</h2>
+      <p class="intro">
+        我们是一家致力于科技创新的专业公司，汇聚了一流的设计团队和程序开发团队。我们的业务范围包括软件开发、系统集成和技术咨询，为企业提供全方位的科技服务，助力企业实现数字化转型和业务增长。
+      </p>
+      <div class="features">
+        <div class="feature">
+          <i class="fa fa-lightbulb-o"></i>
+          <h4 class="feature-title">品牌创意</h4>
+          <p class="feature-content">让各知名行业门户脱颖而出,从满足预期到走向卓越。为企业设计独特的并能完美呈现企业价值观的视觉。</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-line-chart"></i>
+          <h4 class="feature-title">整合营销</h4>
+          <p class="feature-content">通过市场进入分析，指定网络营销战略，网络营销实施。</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-shopping-cart"></i>
+          <h4 class="feature-title">电子商务</h4>
+          <p class="feature-content">根据企业需求，开发不同的销售渠道，通过网上直销</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-desktop"></i>
+          <h4 class="feature-title">网页设计</h4>
+          <p class="feature-content">企业官网专属的高端定制化服务
+            解决方案，全面满足建设核心与运行管理
+            并提升企业品牌的有效传播。</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-tachometer"></i>
+          <h4 class="feature-title">网站优化</h4>
+          <p class="feature-content">先分析后合作，先排名后付费，整站SEO优化让您的网站有更多关键词的自然排名，长期稳定共赢</p>
+        </div>
+        <div class="feature">
+          <i class="fa fa-lightbulb-o"></i>
+          <h4 class="feature-title">网站架设</h4>
+          <p class="feature-content">从策划到设计制作，每一步都追求做到细腻，结合搜索引擎优化与用户体验优化，制作可持续发展的企业网站</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section id="showcases" class="showcases section-bg">
+      <h2 class="title1">成功案例</h2>
+      <!-- 筛选按钮 -->
+      <div class="filter-btns">
+        <button class="filter-btn active" data-filter="*">全部</button>
+        <button class="filter-btn" data-filter=".category_2">建筑设计</button>
+        <button class="filter-btn" data-filter=".category_3">人物设计</button>
+        <button class="filter-btn" data-filter=".category_4">场景设计</button>
+      </div>
+      <!-- 筛选图片 -->
+      <div class="cases">
+          {% for item in cases %}
+        <div class="case-item category_{{item.category.id}}">
+          <a href="/news/{{item.id}}",alt="">
+              <img src="/media/{{item.cover}}" alt="">
+          </a>
+        </div>
+          {% endfor %}
+      </div>
+    </section>
+
+    <!-- 服务 -->
+    <section id="service" class="service">
+      <h2 class="title1">服务流程</h2>
+      <p class="intro">
+        我们提供全方位的科技服务，包括基础服务（如域名注册、主机托管、企业邮箱）以及增值服务（如软件开发、系统优化、技术支持）。我们的目标是为客户提供高效、可靠的技术解决方案，助力企业提升竞争力。
+      </p>
+      <div class="services">
+        <div class="service-item">
+          <i class="fa fa-comments"></i>
+          <h2 class="service-title">需求沟通</h2>
+          <p class="service-content">
+            客户提出网站建设基本需求，包括设计要求及功能要求。
+          </p>
+        </div>
+        <div class="service-item">
+          <i class="fa fa-sign-in"></i>
+          <h2 class="service-title">项目评估</h2>
+          <p class="service-content">
+            根据客户提出的需求进行评估，估算出相应的时间与费用。
+          </p>
+        </div>
+        <div class="service-item">
+          <i class="fa fa-signal"></i>
+          <h2 class="service-title">签订合同</h2>
+          <p class="service-content">
+            合作双方确认费用，工期，合作要求的基础上，双方共同签订合同。
+          </p>
+        </div>
+        <div class="service-item">
+          <i class="fa fa-user"></i>
+          <h2 class="service-title">提案阶段</h2>
+          <p class="service-content">
+            完成网站初稿设计，包括首页风格，内页风格页面。
+          </p>
+        </div>
+        <div class="service-item">
+          <i class="fa fa-thumb-tack"></i>
+          <h2 class="service-title">制作阶段</h2>
+          <p class="service-content">
+            完成所有网页的设计，进行程序开发以及前后台的页面整合。
+          </p>
+        </div>
+        <div class="service-item">
+          <i class="fa fa-check-circle"></i>
+          <h2 class="service-title">网站验收</h2>
+          <p class="service-content">
+            根据合同条款进行网站验收，并签署网站验收确认单。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section id="team-intro" class="team-intro section-bg">
+      <h2 class="title1">团队介绍</h2>
+      <div class="team-members">
+      {% for member in team %}
+        <div class="team-member">
+          <div class="profile-image">
+            <img src="media/{{member.avatar}}" alt="">
+          </div>
+          <h4 class="name">{{member.name}}</h4>
+          <p class="position">{{member.title}}</p>
+          <ul class="social-links">
+            <li><i class="fa fa-weixin"></i></li>
+            <li><i class="fa fa-weibo"></i></li>
+            <li><i class="fa fa-github"></i></li>
+            <li><i class="fa fa-linkedin-square "></i></li>
+          </ul>
+        </div>
+      {% endfor %}
+      </div>
+    </section>
+
+    <!-- 数据区域 -->
+    <section class="data-section">
+      <div class="data-price">
+        <i class="fa fa-code"></i>
+        <div class="num">280万</div>
+        <div class="data-desc">行代码</div>
+      </div>
+      <div class="data-price">
+        <i class="fa fa-trophy"></i>
+        <div class="num">168</div>
+        <div class="data-desc">个奖项</div>
+      </div>
+      <div class="data-price">
+        <i class="fa fa-male"></i>
+        <div class="num">2969</div>
+        <div class="data-desc">位客户</div>
+      </div>
+      <div class="data-price">
+        <i class="fa fa-folder"></i>
+        <div class="num">684</div>
+        <div class="data-desc">个项目</div>
+      </div>
+    </section>
+
+    <!-- 公司动态 -->
+    <section id="company-activities" class="company-activities">
+      <h2 class="title1">资讯中心</h2>
+      <p class="intro">关注公司动态，获取一手信息</p>
+      <div class="activities">
+          {% for item in news %}
+        <div class="activity">
+          <div class="act-image-wrapper">
+            <img src="media/{{item.cover}}" alt="">
+          </div>
+          <div class="meta">
+            <p class="date-published">
+              <i class="fa fa-calendar"></i> {{item.created_at}}
+            </p>
+          </div>
+          <h2 class="act-title">{{item.title}}</h2>
+          <article>{{item.content|slice:'20'|safe}}.</article>
+            <a href="/news/{{item.id}}">
+                <button class="readmore-btn">阅读更多</button>
+            </a>
+        </div>
+          {% endfor %}
+      </div>
+        <div>
+            <a href="/news/list">
+                <button class="readmore-btn">点击查看更多资讯</button>
+            </a>
+        </div>
+    </section>
+  </div>
+{% endblock %}
